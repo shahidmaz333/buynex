@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuyNex | Three Brands. One Promise. (Waterbird & Ora Fresh)</title>
+  <meta name="description" content="BuyNex Multi-Brand Marketplace: Waterbird Microfiber Car Care, Waterbird Luxury Fragrances, and Ora Fresh Premium Dry Fruits & Foods. Buy Smart. BuyNex.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+  
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- 1. TOP ANNOUNCEMENT BAR -->
+  <div class="top-announcement-bar">
+    <div class="wrap top-bar-inner">
+      <div class="top-bar-left">
+        <i class="fa-solid fa-truck-fast" style="color: var(--buynex-orange);"></i>
+        <span>Free Shipping on orders above ₹999</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="#contact">Track Order</a>
+        <span>|</span>
+        <a href="#about">About Us</a>
+        <span>|</span>
+        <a href="#contact">Contact Us</a>
+        <div class="social-icons-strip">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="mailto:buynexllp@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MAIN HEADER (LOGO, SEARCH, USER ACTIONS) -->
+  <header class="main-header">
+    <div class="wrap header-row">
+      <!-- BuyNex Brand Logo -->
+      <a href="index.html" class="buynex-logo">
+        <div class="logo-main">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Buy<span class="orange">Nex</span></span>
+        </div>
+        <span class="logo-tagline">Buy Smart. BuyNex.</span>
+      </a>
+
+      <!-- Central Search Bar -->
+      <div class="search-container">
+        <select class="search-category-select" id="searchCategorySelect">
+          <option value="all">All Categories</option>
+          <option value="waterbird-microfiber">Waterbird Microfiber</option>
+          <option value="waterbird-fragrance">Waterbird Fragrance</option>
+          <option value="ora-fresh">Ora Fresh Dry Fruits</option>
+        </select>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search for products, brands and more...">
+        <button class="search-btn" id="searchBtn" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- User Action Items -->
+      <div class="header-actions">
+        <div class="action-item" id="openAddProductModal" title="Add Product">
+          <i class="fa-solid fa-circle-plus"></i>
+          <span class="action-text">Add Product</span>
+        </div>
+
+        <div class="action-item" id="wishlistToggle" title="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="action-text">Wishlist</span>
+          <span class="badge-count" id="wishlistBadge" style="display: none;">0</span>
+        </div>
+
+        <div class="action-item" id="cartToggle" title="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="action-text">Cart</span>
+          <span class="badge-count" id="cartBadge">0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. BRAND CATEGORY NAVIGATION STRIP -->
+  <nav class="brand-nav-strip">
+    <div class="wrap nav-strip-inner">
+      <div class="all-categories-btn">
+        <i class="fa-solid fa-bars"></i>
+        <span>All Categories</span>
+      </div>
+
+      <ul class="nav-tabs" id="navTabs">
+        <li><button class="nav-tab-btn active" data-brand="all">Home</button></li>
+        <li><button class="nav-tab-btn" data-brand="waterbird-microfiber">Waterbird Microfiber</button></li>
+        <li><button class="nav-tab-btn" data-brand="waterbird-fragrance">Waterbird Fragrance Car Care</button></li>
+        <li><button class="nav-tab-btn" data-brand="ora-fresh">Ora Fresh</button></li>
+        <li><button class="nav-tab-btn" data-brand="new-arrivals">New Arrivals</button></li>
+        <li><button class="nav-tab-btn" data-brand="best-sellers">Best Sellers</button></li>
+        <li><button class="nav-tab-btn" data-brand="offers">Offers</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main>
+
+    <!-- 4. HERO SECTION: 3 BRANDS SHOWCASE (HOME VIEW) -->
+    <section class="home-hero-section" id="homeHeroSection">
+      <div class="wrap">
+        <div class="hero-header-center">
+          <h1>Three Brands. One Promise.</h1>
+          <p>Premium Quality. Trusted by Thousands.</p>
+        </div>
+
+        <!-- 3 Brand Showcase Cards -->
+        <div class="brands-showcase-grid">
+          
+          <!-- Brand 1: Waterbird Microfiber & Accessories -->
+          <div class="brand-card waterbird-microfiber-card">
+            <div class="brand-card-header">
+              <div class="brand-logo-img-wrap">
+                <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+                  <path d="M6 26 C10 14 20 6 34 6 C30 12 28 16 30 20 C24 18 18 20 14 26 C11 30 8 30 6 26Z" fill="#1E40AF"/>
+                </svg>
+                <h3>WATERBIRD</h3>
+              </div>
+              <span>MICROFIBER & ACCESSORIES</span>
+            </div>
+
+            <div class="brand-card-media">
+              <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=700&auto=format&fit=crop&q=80" alt="Waterbird Microfiber">
+            </div>
+
+            <div class="card-features-bar">
+              <div class="card-feature-item">
+                <i class="fa-solid fa-layer-group" style="color: #1E40AF;"></i>
+                <span>Microfiber Cloths</span>
+              </div>
+              <div class="card-feature-item">
+                <i class="fa-solid fa-hand" style="color: #1E40AF;"></i>
+                <span>Washing Gloves</span>
+              </div>
+              <div class="card-feature-item">
+                <i class="fa-solid fa-rug" style="color: #1E40AF;"></i>
+                <span>Drying Towels</span>
+              </div>
+              <div class="card-feature-item">
+                <i class="fa-solid fa-shield-halved" style="color: #1E40AF;"></i>
+                <span>Quality Feel</span>
+              </div>
+            </div>
+
+            <div class="brand-explore-btn-wrap">
+              <button class="btn-explore wb-blue" data-switch-brand="waterbird-microfiber">
+                Explore Now <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Brand 2: Waterbird Fragrance & Car Care -->
+          <div class="brand-card waterbird-fragrance-card">
+            <div class="brand-card-header">
+              <div class="brand-logo-img-wrap">
+                <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+                  <path d="M6 26 C10 14 20 6 34 6 C30 12 28 16 30 20 C24 18 18 20 14 26 C11 30 8 30 6 26Z" fill="#D4AF37"/>
+                </svg>
+                <h3>WATERBIRD</h3>
+              </div>
+              <span style="color: #D4AF37;">FRAGRANCE & CAR CARE</span>
+            </div>
+
+            <div class="brand-card-media">
+              <img src="https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?w=700&auto=format&fit=crop&q=80" alt="Waterbird Fragrance">
+            </div>
+
+            <div class="card-features-bar">
+              <div class="card-feature-item">
+                <i class="fa-solid fa-wand-magic-sparkles" style="color: #D4AF37;"></i>
+                <span>Luxury Scents</span>
+              </div>
+              <div class="card-feature-item">
+                <i class="fa-solid fa-spray-can" style="color: #D4AF37;"></i>
+                <span>Car Perfumes</span>
+              </div>
+              <div class="card-feature-item">
+                <i class="fa-solid fa-pump-soap" style="color: #D4AF37;"></i>
+                <span>Car Shampoo</span>
+              </div>
+              <div class="card-feature-item">
+                <i class="fa-solid fa-clock" style="color: #D4AF37;"></i>
+                <span>Long Lasting</span>
+              </div>
+            </div>
+
+            <div class="brand-explore-btn-wrap">
+              <button class="btn-explore wb-dark" data-switch-brand="waterbird-fragrance">
+                Explore Now <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Brand 3: Ora Fresh Dry Fruits & Food Items -->
+          <div class="brand-card ora-fresh-card">
+            <div class="brand-card-header">
+              <div class="brand-logo-img-wrap">
+                <i class="fa-solid fa-leaf" style="color: var(--orafresh-green); font-size: 24px;"></i>
+                <h3>Ora Fresh</h3>
+              </div>
+              <span style="color: var(--orafresh-green);">DRY FRUITS & FOOD ITEMS</span>
+            </div>
+
+            <div class="brand-card-media">
+              <img src="https://images.unsplash.com/photo-1508061253366-f7da158b6d46?w=700&auto=format&fit=crop&q=80" alt="Ora Fresh Dry Fruits">
+            </div>
+
+            <div class="card-features-bar">
+              <div class="card-feature-item">
+                <i class="fa-solid fa-award" style="color: var(--orafresh-green);"></i>
+                <span>Premium Quality</span>
+              </div>
+              <div class="card-feature-item">
+                <i class="fa-solid fa-seedling" style="color: var(--orafresh-green);"></i>
+                <span>100% Natural</span>
+              </div>
+              <div class="card-feature-item">
+                <i class="fa-solid fa-box" style="color: var(--orafresh-green);"></i>
+                <span>Hygienic Pack</span>
+              </div>
+              <div class="card-feature-item">
+                <i class="fa-solid fa-heart-pulse" style="color: var(--orafresh-green);"></i>
+                <span>Healthy Food</span>
+              </div>
+            </div>
+
+            <div class="brand-explore-btn-wrap">
+              <button class="btn-explore ora-green" data-switch-brand="ora-fresh">
+                Explore Now <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DYNAMIC BRAND DEDICATED BANNER CONTAINER -->
+    <div id="dynamicBrandBannerContainer" class="wrap" style="display: none;"></div>
+
+    <!-- 5. CATALOG SECTION (FILTER SIDEBAR + PRODUCTS GRID) -->
+    <section class="catalog-section">
+      <div class="wrap catalog-layout">
+        
+        <!-- LEFT FILTER SIDEBAR -->
+        <aside class="filter-sidebar">
+          <div class="filter-sidebar-header">
+            <h4>FILTER BY</h4>
+            <button class="btn-reset-filters" id="resetFiltersBtn">Reset All</button>
+          </div>
+
+          <!-- Category Filter Group -->
+          <div class="filter-group">
+            <div class="filter-title">
+              <span>Category</span>
+              <i class="fa-solid fa-chevron-up" style="font-size: 10px;"></i>
+            </div>
+            <div class="filter-options-list" id="categoryFilterOptions">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Price Range Slider Group -->
+          <div class="filter-group">
+            <div class="filter-title">
+              <span>Price</span>
+              <i class="fa-solid fa-chevron-up" style="font-size: 10px;"></i>
+            </div>
+            <div class="price-slider-wrap">
+              <input type="range" class="price-range-input" id="priceRangeInput" min="99" max="2500" step="50" value="2500">
+              <div class="price-values-row">
+                <span>₹99</span>
+                <span id="priceSliderValue">₹2,500</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pack Size Filter Group -->
+          <div class="filter-group" id="packSizeFilterGroup">
+            <div class="filter-title">
+              <span>Pack Size</span>
+              <i class="fa-solid fa-chevron-up" style="font-size: 10px;"></i>
+            </div>
+            <div class="filter-options-list">
+              <label class="filter-checkbox-label"><input type="checkbox" value="250g" class="pack-checkbox"> 250g</label>
+              <label class="filter-checkbox-label"><input type="checkbox" value="500g" class="pack-checkbox"> 500g</label>
+              <label class="filter-checkbox-label"><input type="checkbox" value="1kg" class="pack-checkbox"> 1kg</label>
+              <label class="filter-checkbox-label"><input type="checkbox" value="Combo Packs" class="pack-checkbox"> Combo Packs</label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- RIGHT MAIN PRODUCTS AREA -->
+        <div class="products-main-area">
+          
+          <!-- Top Controls Bar -->
+          <div class="products-top-bar">
+            <span class="results-count" id="resultsCountText">Showing 1-12 of 36 products</span>
+
+            <div class="products-controls-right">
+              <div class="sort-select-wrap">
+                <select id="sortSelect">
+                  <option value="best-selling">Sort by: Best Selling</option>
+                  <option value="price-low-high">Price: Low to High</option>
+                  <option value="price-high-low">Price: High to Low</option>
+                  <option value="rating">Top Rated</option>
+                </select>
+              </div>
+
+              <div class="view-toggle-btns">
+                <button class="view-btn active" id="viewGridBtn" aria-label="Grid View" title="Grid View">
+                  <i class="fa-solid fa-border-all"></i>
+                </button>
+                <button class="view-btn" id="viewListBtn" aria-label="List View" title="List View">
+                  <i class="fa-solid fa-list"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Products Grid -->
+          <div class="products-grid" id="productsGrid">
+            <!-- Dynamically populated via main.js -->
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. TRUST FEATURE BAR -->
+    <section class="trust-feature-bar">
+      <div class="wrap trust-features-grid">
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-truck"></i></div>
+          <div class="trust-text">
+            <b>Fast & Reliable Delivery</b>
+            <span>Pan India Delivery</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="trust-text">
+            <b>Secure Payments</b>
+            <span>100% Safe & Secure</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-certificate"></i></div>
+          <div class="trust-text">
+            <b>Quality Assured</b>
+            <span>Only Genuine Products</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-rotate-left"></i></div>
+          <div class="trust-text">
+            <b>Easy Returns</b>
+            <span>Hassle Free Returns</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CART DRAWER OVERLAY -->
+  <div class="cart-overlay" id="cartOverlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3><i class="fa-solid fa-bag-shopping" style="color: var(--buynex-blue);"></i> Shopping Cart</h3>
+        <button class="cart-icon-btn" id="cartClose" aria-label="Close cart" style="background:none; border:none; font-size: 20px; cursor:pointer;">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="cart-items" id="cartItems">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Subtotal</span>
+          <span id="cartTotalPrice">₹0.00</span>
+        </div>
+        <button class="btn-checkout" onclick="alert('Proceeding to Checkout with BuyNex!')">
+          Proceed to Checkout <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD PRODUCT MODAL -->
+  <div class="quickview-overlay" id="productModalOverlay">
+    <div class="quickview-modal" style="max-width: 500px;">
+      <button class="quickview-close" id="closeProductModal"><i class="fa-solid fa-xmark"></i></button>
+      <h3 style="margin-bottom: 16px;"><i class="fa-solid fa-plus-circle" style="color: var(--buynex-blue);"></i> Add Custom Product</h3>
+      <form id="productForm" style="display: flex; flex-direction: column; gap: 12px;">
+        <div>
+          <label style="font-size: 12px; font-weight: 700;">Brand *</label>
+          <select id="prodBrand" required style="width: 100%; padding: 8px; border: 1px solid #CBD5E1; border-radius: 6px;">
+            <option value="waterbird-microfiber">Waterbird Microfiber</option>
+            <option value="waterbird-fragrance">Waterbird Fragrance Car Care</option>
+            <option value="ora-fresh">Ora Fresh Dry Fruits & Foods</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size: 12px; font-weight: 700;">Product Name *</label>
+          <input type="text" id="prodName" required placeholder="e.g. PREMIUM ALMONDS 500G" style="width: 100%; padding: 8px; border: 1px solid #CBD5E1; border-radius: 6px;">
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div>
+            <label style="font-size: 12px; font-weight: 700;">Category *</label>
+            <input type="text" id="prodCategory" required placeholder="Dry Fruits" style="width: 100%; padding: 8px; border: 1px solid #CBD5E1; border-radius: 6px;">
+          </div>
+          <div>
+            <label style="font-size: 12px; font-weight: 700;">Price (₹) *</label>
+            <input type="number" id="prodPrice" required placeholder="349" style="width: 100%; padding: 8px; border: 1px solid #CBD5E1; border-radius: 6px;">
+          </div>
+        </div>
+        <div>
+          <label style="font-size: 12px; font-weight: 700;">Image URL</label>
+          <input type="url" id="prodImage" placeholder="https://images.unsplash.com/..." style="width: 100%; padding: 8px; border: 1px solid #CBD5E1; border-radius: 6px;">
+        </div>
+        <div>
+          <label style="font-size: 12px; font-weight: 700;">Description</label>
+          <textarea id="prodDescription" rows="2" placeholder="Product features..." style="width: 100%; padding: 8px; border: 1px solid #CBD5E1; border-radius: 6px;"></textarea>
+        </div>
+        <button type="submit" class="btn-add-cart" style="margin-top: 10px;">Save Product</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- QUICK VIEW MODAL OVERLAY -->
+  <div class="quickview-overlay" id="quickViewOverlay">
+    <div class="quickview-modal">
+      <button class="quickview-close" id="quickViewClose"><i class="fa-solid fa-xmark"></i></button>
+      <div id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- 7. FOOTER -->
+  <footer id="about">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo-main" style="color: var(--white); margin-bottom: 12px;">
+            <i class="fa-solid fa-cart-shopping" style="color: var(--buynex-orange);"></i>
+            <span>Buy<span class="orange">Nex</span></span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.6;">BuyNex is a premier multi-brand marketplace bringing together Waterbird Auto Detailing & Care and Ora Fresh Fine Parfums & Dry Fruits.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>OUR BRANDS</h4>
+          <ul>
+            <li><a href="#" data-switch-brand="waterbird-microfiber">Waterbird Microfiber</a></li>
+            <li><a href="#" data-switch-brand="waterbird-fragrance">Waterbird Fragrance</a></li>
+            <li><a href="#" data-switch-brand="ora-fresh">Ora Fresh Dry Fruits</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>CUSTOMER SERVICE</h4>
+          <ul>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>CONTACT US</h4>
+          <p><i class="fa-solid fa-envelope" style="color: var(--buynex-orange);"></i> buynexllp@gmail.com</p>
+          <p><i class="fa-solid fa-phone" style="color: var(--buynex-orange);"></i> +91 94958 90622</p>
+          <p><i class="fa-solid fa-location-dot" style="color: var(--buynex-orange);"></i> Kollam, Kerala - 690573</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 BuyNex Inc. All Rights Reserved. Marketed by BuyNex.</p>
+        <div>Buy Smart. BuyNex.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Scripts -->
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
